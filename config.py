@@ -34,7 +34,14 @@ STAGE_SCORES = {
 
 # Flask Configuration
 FLASK_HOST = os.getenv("FLASK_HOST", "0.0.0.0")
-FLASK_PORT = int(os.getenv("FLASK_PORT", 5000))
+
+# Handle Render's PORT env var and safe conversion
+port_str = os.getenv("PORT") or os.getenv("FLASK_PORT", "5000")
+try:
+    FLASK_PORT = int(port_str)
+except (ValueError, TypeError):
+    FLASK_PORT = 5000
+
 FLASK_DEBUG = os.getenv("FLASK_DEBUG", "False").lower() == "true"
 
 # Logging Configuration

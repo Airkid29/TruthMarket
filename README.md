@@ -23,7 +23,7 @@ The application consists of several components:
 ## Architecture
 
 ```
-truthmarket2/
+truthmarket/
 ├── app.py          # Flask web application
 ├── main.py         # Command-line analysis runner
 ├── fetcher.py      # Polymarket API client
