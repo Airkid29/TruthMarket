@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TruthMarket AI — Sports Decision Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── RESET + VARS ─────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;
+  --s1:#101010;
+  --s2:#161616;
+  --s3:#1c1c1c;
+  --b1:rgba(255,255,255,.07);
+  --b2:rgba(255,255,255,.13);
+  --b3:rgba(255,255,255,.22);
+  --t1:#f0ede8;
+  --t2:rgba(240,237,232,.54);
+  --t3:rgba(240,237,232,.28);
+  --red:#e05252;  --red-d:rgba(224,82,82,.12);   --red-b:rgba(224,82,82,.28);
+  --grn:#4caf82;  --grn-d:rgba(76,175,130,.12);  --grn-b:rgba(76,175,130,.28);
+  --amb:#d4954a;  --amb-d:rgba(212,149,74,.09);  --amb-b:rgba(212,149,74,.24);
+  --blue:#5b8ff0;
+  --serif:'Instrument Serif',Georgia,serif;
+  --mono:'DM Mono',monospace;
+  --sans:'DM Sans',sans-serif;
+}
+body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:14px;line-height:1.6;min-height:100vh}
+
+/* ── HEADER ──────────────────────────────────────────── */
+.hdr{
+  position:sticky;top:0;z-index:200;
+  height:56px;padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,8,8,.88);backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--b1);
+}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo-name{font-family:var(--serif);font-size:19px;letter-spacing:-.3px}
+.logo-tag{font-family:var(--mono);font-size:9px;color:var(--t3);letter-spacing:.8px;text-transform:uppercase}
+.hdr-r{display:flex;align-items:center;gap:12px}
+.live{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9px;color:var(--grn);letter-spacing:.6px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--grn);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+.api-btn{font-family:var(--mono);font-size:9px;color:var(--t3);border:1px solid var(--b2);
+  padding:5px 11px;border-radius:4px;text-decoration:none;transition:.15s}
+.api-btn:hover{color:var(--t2);border-color:var(--b3)}
+.refresh-btn{font-family:var(--mono);font-size:9px;color:var(--t3);border:1px solid var(--b2);
+  background:none;cursor:pointer;padding:5px 11px;border-radius:4px;transition:.15s}
+.refresh-btn:hover{color:var(--t1);border-color:var(--b3)}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{max-width:1120px;margin:0 auto;padding:3.5rem 2rem 2.5rem}
+.hero-eye{font-family:var(--mono);font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;margin-bottom:.9rem}
+.hero-h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,52px);line-height:1.08;letter-spacing:-.8px;margin-bottom:.9rem}
+.hero-h1 em{font-style:italic;color:var(--t2)}
+.hero-sub{font-size:14px;color:var(--t2);max-width:500px;line-height:1.75;margin-bottom:2.5rem}
+
+/* ── STAT STRIP ──────────────────────────────────────── */
+.stat-strip{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;
+}
+.stat{background:var(--s1);padding:1.1rem 1.4rem;transition:background .15s}
+.stat:hover{background:var(--s2)}
+.stat-l{font-family:var(--mono);font-size:9px;color:var(--t3);letter-spacing:.7px;text-transform:uppercase;margin-bottom:7px}
+.stat-v{font-family:var(--serif);font-size:30px;line-height:1;color:var(--t1)}
+.stat-v.red{color:var(--red)}.stat-v.grn{color:var(--grn)}.stat-v.amb{color:var(--amb)}
+#s-time{font-family:var(--mono);font-size:16px;padding-top:5px}
+
+/* ── TABS ─────────────────────────────────────────────── */
+.tabs-wrap{max-width:1120px;margin:0 auto;padding:0 2rem 5rem}
+.tabs{display:flex;border-bottom:1px solid var(--b1);margin-bottom:2rem}
+.tab{background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;
+  padding:9px 18px;font-family:var(--sans);font-size:13px;color:var(--t3);
+  cursor:pointer;display:flex;align-items:center;gap:7px;transition:.15s}
+.tab:hover{color:var(--t2)}.tab.on{color:var(--t1);border-bottom-color:var(--t1);font-weight:500}
+.tab-n{font-family:var(--mono);font-size:9px;background:var(--s2);color:var(--t3);
+  padding:2px 6px;border-radius:3px}
+
+/* ── SECTION LABELS ──────────────────────────────────── */
+.sec-lbl{font-family:var(--mono);font-size:9px;color:var(--t3);
+  letter-spacing:.8px;text-transform:uppercase;margin-bottom:.8rem}
+
+/* ── CARD GRID ────────────────────────────────────────── */
+.card-grid{display:flex;flex-direction:column;gap:1px;
+  background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden;
+  margin-bottom:1.8rem}
+
+/* ── MARKET CARD ─────────────────────────────────────── */
+.mc{
+  background:var(--s1);padding:1.25rem 1.5rem;
+  transition:background .15s;position:relative;overflow:hidden;
+}
+.mc:hover{background:var(--s2)}
+.mc.against{border-left:2px solid var(--red)}
+.mc.follow {border-left:2px solid var(--grn)}
+.mc.hold   {border-left:2px solid var(--b2)}
+
+/* glow tint on hover */
+.mc.against:hover::before{content:'';position:absolute;inset:0;background:rgba(224,82,82,.03);pointer-events:none}
+.mc.follow:hover::before {content:'';position:absolute;inset:0;background:rgba(76,175,130,.03);pointer-events:none}
+
+.mc-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.1rem}
+.mc-identity{display:flex;align-items:center;gap:12px}
+
+/* LOGO */
+.team-logo{
+  width:40px;height:40px;border-radius:8px;
+  background:var(--s3);border:1px solid var(--b1);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;flex-shrink:0;
+}
+.team-logo img{width:100%;height:100%;object-fit:contain;padding:3px}
+.team-logo .fallback{font-size:16px;line-height:1}
+
+.mc-name{font-family:var(--serif);font-size:17px;letter-spacing:-.2px;line-height:1.2}
+.mc-meta{font-family:var(--mono);font-size:9px;color:var(--t3);letter-spacing:.3px;margin-top:2px}
+
+.mc-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+
+/* BADGE */
+.badge{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.6px;
+  text-transform:uppercase;padding:4px 10px;border-radius:4px;white-space:nowrap}
+.badge.against{background:var(--red-d);color:var(--red);border:1px solid var(--red-b)}
+.badge.follow {background:var(--grn-d);color:var(--grn);border:1px solid var(--grn-b)}
+.badge.hold   {background:var(--amb-d);color:var(--amb);border:1px solid var(--amb-b)}
+
+/* CONFIDENCE GAUGE ── SVG circle */
+.gauge-wrap{display:flex;flex-direction:column;align-items:center;gap:2px;width:44px}
+.gauge-num{font-family:var(--mono);font-size:9px;color:var(--t3);text-align:center}
+.gauge svg{transform:rotate(-90deg)}
+
+/* BARS */
+.bars{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1rem}
+.bar-lbl{font-family:var(--mono);font-size:9px;color:var(--t3);
+  text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.bar-track{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:5px}
+.bar-fill{height:100%;border-radius:2px;transition:width .9s cubic-bezier(.4,0,.2,1)}
+.bar-fill.mkt{background:var(--blue)}
+.bar-fill.mdl{background:var(--grn)}
+.bar-fill.mdl.red{background:var(--red)}
+.bar-num{font-family:var(--mono);font-size:21px;font-weight:500;line-height:1}
+.bar-num small{font-size:12px;font-weight:400;color:var(--t3)}
+
+/* DIV ROW */
+.div-row{display:flex;align-items:flex-start;gap:.9rem;
+  padding-top:.9rem;border-top:1px solid var(--b1)}
+.div-lbl{font-family:var(--mono);font-size:9px;color:var(--t3);
+  text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;padding-top:1px}
+.div-val{font-family:var(--mono);font-size:12px;font-weight:500;white-space:nowrap}
+.div-val.red{color:var(--red)}.div-val.grn{color:var(--grn)}.div-val.amb{color:var(--amb)}
+.div-explain{font-size:12px;color:var(--t2);line-height:1.55;flex:1}
+
+/* CONF TAGS */
+.conf-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:.65rem}
+.conf-tag{font-family:var(--mono);font-size:9px;color:var(--t3);
+  background:rgba(255,255,255,.04);border:1px solid var(--b1);
+  padding:3px 8px;border-radius:3px}
+
+/* SHARE BTN */
+.share-btn{font-family:var(--mono);font-size:9px;color:var(--t3);
+  background:none;border:1px solid var(--b1);padding:3px 8px;border-radius:3px;
+  cursor:pointer;transition:.15s;margin-top:.65rem}
+.share-btn:hover{color:var(--t1);border-color:var(--b2)}
+.share-btn.copied{color:var(--grn);border-color:var(--grn-b)}
+
+/* ── METHODOLOGY ─────────────────────────────────────── */
+.method{max-width:1120px;margin:0 auto;padding:0 2rem 4rem;
+  border-top:1px solid var(--b1);padding-top:3rem}
+.method-h{font-family:var(--serif);font-size:22px;margin-bottom:1.4rem}
+.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1px;background:var(--b1);border:1px solid var(--b1);border-radius:12px;overflow:hidden}
+.mbox{background:var(--s1);padding:1.25rem 1.5rem}
+.mbox-w{font-family:var(--serif);font-size:28px;color:var(--t2);margin-bottom:4px}
+.mbox-t{font-size:13px;font-weight:500;margin-bottom:7px}
+.mbox-d{font-size:12px;color:var(--t2);line-height:1.6}
+
+/* ── API SECTION ─────────────────────────────────────── */
+.api-sec{max-width:1120px;margin:0 auto;padding:0 2rem 4rem}
+.api-h{font-family:var(--serif);font-size:22px;margin-bottom:1.4rem}
+.code{background:var(--s1);border:1px solid var(--b1);border-radius:10px;
+  padding:1.4rem;font-family:var(--mono);font-size:11px;color:var(--t2);
+  overflow-x:auto;line-height:1.85}
+.code .k{color:var(--blue)}.code .s{color:var(--grn)}.code .n{color:var(--amb)}.code .c{color:var(--t3)}
+
+/* ── LOADING / EMPTY ─────────────────────────────────── */
+.loading{text-align:center;padding:4rem 2rem;font-family:var(--mono);font-size:11px;color:var(--t3)}
+.spin{width:18px;height:18px;border:1px solid var(--b1);border-top-color:var(--t3);
+  border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 1rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{padding:3rem;text-align:center;font-size:13px;color:var(--t3)}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer{border-top:1px solid var(--b1);padding:2rem;text-align:center;
+  font-family:var(--mono);font-size:9px;color:var(--t3);letter-spacing:.5px}
+
+/* ── PANEL ───────────────────────────────────────────── */
+.panel{display:none}.panel.on{display:block}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:680px){
+  .stat-strip{grid-template-columns:repeat(2,1fr)}
+  .bars{grid-template-columns:1fr}
+  .method-grid{grid-template-columns:1fr}
+  .hero{padding:2rem 1rem 1.5rem}
+  .tabs-wrap{padding:0 1rem 3rem}
+  .hdr{padding:0 1rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="logo">
+    <span class="logo-name">TruthMarket AI</span>
+    <span class="logo-tag">Sports Decision Engine</span>
+  </div>
+  <div class="hdr-r">
+    <div class="live"><div class="dot"></div>LIVE</div>
+    <button class="refresh-btn" onclick="refreshAll()">↻ Refresh</button>
+    <a href="/api/analyze?sport=worldcup" class="api-btn">API ↗</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eye">Powered by Polymarket · ELO Ratings · Historical Records</div>
+  <h1 class="hero-h1">When the crowd is wrong,<br><em>we tell you when to act.</em></h1>
+  <p class="hero-sub">We compare live prediction market odds against ELO ratings and tournament history to surface systematic mispricings across World Cup, NBA and Champions League markets.</p>
+
+  <div class="stat-strip">
+    <div class="stat">
+      <div class="stat-l">Markets analyzed</div>
+      <div class="stat-v" id="s-total">—</div>
+    </div>
+    <div class="stat">
+      <div class="stat-l">Bet against signals</div>
+      <div class="stat-v red" id="s-against">—</div>
+    </div>
+    <div class="stat">
+      <div class="stat-l">Follow market signals</div>
+      <div class="stat-v grn" id="s-follow">—</div>
+    </div>
+    <div class="stat">
+      <div class="stat-l">Last updated</div>
+      <div class="stat-v" id="s-time">—</div>
+    </div>
+  </div>
+</section>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <button class="tab on" onclick="switchTab('worldcup',this)">
+      ⚽ World Cup 2026 <span class="tab-n" id="tn-worldcup">–</span>
+    </button>
+    <button class="tab" onclick="switchTab('nba',this)">
+      🏀 NBA 2026 <span class="tab-n" id="tn-nba">–</span>
+    </button>
+    <button class="tab" onclick="switchTab('ucl',this)">
+      🏆 Champions League <span class="tab-n" id="tn-ucl">–</span>
+    </button>
+  </div>
+
+  <div id="panel-worldcup" class="panel on">
+    <div class="loading"><div class="spin"></div>Fetching live Polymarket data…</div>
+  </div>
+  <div id="panel-nba" class="panel">
+    <div class="loading"><div class="spin"></div>Fetching live Polymarket data…</div>
+  </div>
+  <div id="panel-ucl" class="panel">
+    <div class="loading"><div class="spin"></div>Fetching live Polymarket data…</div>
+  </div>
+</div>
+
+<div class="method">
+  <h2 class="method-h">How the model works</h2>
+  <div class="method-grid">
+    <div class="mbox">
+      <div class="mbox-w">50%</div>
+      <div class="mbox-t">ELO Rating</div>
+      <div class="mbox-d">Gold-standard competitive rating system. Each team's ELO is normalised across the full field to produce valid win probabilities — the same method used by FIFA and the chess world.</div>
+    </div>
+    <div class="mbox">
+      <div class="mbox-w">30%</div>
+      <div class="mbox-t">Historical success</div>
+      <div class="mbox-d">Titles and finals appearances weighted with Laplace smoothing to avoid zero-probability teams. Past champions carry structural advantages: federation depth, player pipelines, big-game experience.</div>
+    </div>
+    <div class="mbox">
+      <div class="mbox-w">20%</div>
+      <div class="mbox-t">Recent tournament form</div>
+      <div class="mbox-d">Last tournament result scored on a 10-point scale and normalised. Captures current squad momentum and coaching quality beyond what historical ELO alone can express.</div>
+    </div>
+  </div>
+</div>
+
+<div class="api-sec">
+  <h2 class="api-h">REST API — deploy your own integration</h2>
+  <div class="code">
+<span class="c"># Query any sport in real time</span>
+GET /api/analyze?sport=<span class="s">worldcup</span> | <span class="s">nba</span> | <span class="s">ucl</span>
+
+<span class="c"># Example response</span>
+{
+  <span class="k">"sport"</span>: <span class="s">"worldcup"</span>,
+  <span class="k">"generated_at"</span>: <span class="s">"2026-04-08T12:00:00Z"</span>,
+  <span class="k">"results"</span>: [{
+    <span class="k">"team"</span>:        <span class="s">"Spain"</span>,
+    <span class="k">"market_prob"</span>:  <span class="n">16.0</span>,   <span class="c">// Polymarket live odds (%)</span>
+    <span class="k">"model_prob"</span>:   <span class="n">3.4</span>,    <span class="c">// Our ELO + history model (%)</span>
+    <span class="k">"divergence"</span>:   <span class="n">12.6</span>,   <span class="c">// pp overpriced</span>
+    <span class="k">"signal"</span>:       <span class="s">"BET AGAINST"</span>,
+    <span class="k">"confidence"</span>:   <span class="n">71</span>,     <span class="c">// signal strength 0-100</span>
+    <span class="k">"logo_url"</span>:     <span class="s">"https://flagcdn.com/h40/es.png"</span>,
+    <span class="k">"explanation"</span>:  <span class="s">"Spain has only 1 title in history…"</span>,
+    <span class="k">"confidence_breakdown"</span>: {
+      <span class="k">"ELO rating (50%)"</span>:        <span class="s">"2085"</span>,
+      <span class="k">"Historical titles (30%)"</span>: <span class="s">"1 titles · 1 finals"</span>,
+      <span class="k">"Recent form (20%)"</span>:       <span class="s">"QF"</span>
+    }
+  }]
+}</div>
+</div>
+
+<footer>TruthMarket AI &nbsp;·&nbsp; Data: Polymarket + ELO Ratings &nbsp;·&nbsp; Zerve Hackathon 2026</footer>
+
+<script>
+const allData = {};
+let totals = {total:0, against:0, follow:0};
+
+// ── SVG gauge ──────────────────────────────────────────
+function gauge(score, cls) {
+  const r = 16, cx = 18, cy = 18, stroke = 3;
+  const circ = 2 * Math.PI * r;
+  const fill = circ * (score / 100);
+  const colors = {against:'#e05252', follow:'#4caf82', hold:'#d4954a'};
+  const col = colors[cls] || '#888';
+  return `<svg width="36" height="36" viewBox="0 0 36 36">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none"
+      stroke="rgba(255,255,255,.07)" stroke-width="${stroke}"/>
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none"
+      stroke="${col}" stroke-width="${stroke}"
+      stroke-dasharray="${fill} ${circ}"
+      stroke-linecap="round"/>
+  </svg>`;
+}
+
+// ── render one card ────────────────────────────────────
+function card(r, sport) {
+  const cls   = r.signal_short || 'hold';
+  const sign  = r.divergence > 0 ? '+' : '';
+  const dcls  = r.divergence > 0 ? 'red' : r.divergence < 0 ? 'grn' : 'amb';
+  const dlbl  = r.divergence > 0
+    ? `${sign}${r.divergence}pp overpriced`
+    : `${sign}${r.divergence}pp underpriced`;
+  const mw    = Math.min(r.market_prob * 3.8, 100).toFixed(1);
+  const dw    = Math.min(r.model_prob  * 3.8, 100).toFixed(1);
+  const mfill = `bar-fill mkt`;
+  const dfill = `bar-fill mdl${cls === 'against' ? ' red' : ''}`;
+  const conf  = r.confidence || 60;
+
+  // Logo element
+  const logo = r.logo_url
+    ? `<img src="${r.logo_url}" alt="${r.team_resolved}"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+         loading="lazy">
+       <span class="fallback" style="display:none">🏆</span>`
+    : `<span class="fallback">${sport==='worldcup'?'🏳️':sport==='nba'?'🏀':'🏆'}</span>`;
+
+  // Conf tags
+  const tags = r.confidence_breakdown
+    ? Object.entries(r.confidence_breakdown)
+        .map(([k,v]) => `<span class="conf-tag">${k}: ${v}</span>`).join('')
+    : '';
+
+  // Share text
+  const shareText = `TruthMarket AI — ${r.team_resolved}: Market ${r.market_prob}% vs Model ${r.model_prob}% | ${r.signal} (${sign}${r.divergence}pp) via truthmarketai.com`;
+
+  const id = 'card-' + Math.random().toString(36).slice(2);
+
+  return `
+<div class="mc ${cls}">
+  <div class="mc-top">
+    <div class="mc-identity">
+      <div class="team-logo">${logo}</div>
+      <div class="mc-info">
+        <div class="mc-name">${r.team_resolved || r.team}</div>
+        <div class="mc-meta">ELO ${r.breakdown?.elo || '–'} &nbsp;·&nbsp; ${r.breakdown?.titles || 0} titles &nbsp;·&nbsp; Last: ${r.breakdown?.recent || '–'}</div>
+      </div>
+    </div>
+    <div class="mc-right">
+      <div class="gauge-wrap">
+        ${gauge(conf, cls)}
+        <span class="gauge-num">${conf}%</span>
+      </div>
+      <span class="badge ${cls}">${r.signal}</span>
+    </div>
+  </div>
+
+  <div class="bars">
+    <div>
+      <div class="bar-lbl">Polymarket odds</div>
+      <div class="bar-track"><div class="${mfill}" data-w="${mw}" style="width:0%"></div></div>
+      <div class="bar-num">${r.market_prob}<small>%</small></div>
+    </div>
+    <div>
+      <div class="bar-lbl">Model estimate</div>
+      <div class="bar-track"><div class="${dfill}" data-w="${dw}" style="width:0%"></div></div>
+      <div class="bar-num">${r.model_prob}<small>%</small></div>
+    </div>
+  </div>
+
+  <div class="div-row">
+    <span class="div-lbl">Divergence</span>
+    <span class="div-val ${dcls}">${dlbl}</span>
+    <span class="div-explain">${r.explanation || ''}</span>
+  </div>
+
+  ${tags ? `<div class="conf-tags">${tags}</div>` : ''}
+
+  <button class="share-btn" onclick="share(this,'${encodeURIComponent(shareText)}')">
+    ↗ Share this signal
+  </button>
+</div>`;
+}
+
+// ── render full panel ──────────────────────────────────
+function renderPanel(sport, data) {
+  const results = data.results || [];
+  document.getElementById(`tn-${sport}`).textContent = results.length;
+
+  const panel = document.getElementById(`panel-${sport}`);
+  if (!results.length) {
+    panel.innerHTML = '<div class="empty">No data available.</div>';
+    return;
+  }
+
+  const against = results.filter(r => r.signal === 'BET AGAINST');
+  const follow  = results.filter(r => r.signal === 'FOLLOW MARKET');
+  const hold    = results.filter(r => r.signal === 'HOLD');
+
+  let html = '';
+  if (against.length) {
+    html += `<div class="sec-lbl">Overpriced — Bet Against (${against.length})</div>`;
+    html += `<div class="card-grid">${against.map(r=>card(r,sport)).join('')}</div>`;
+  }
+  if (follow.length) {
+    html += `<div class="sec-lbl">Underpriced — Follow Market (${follow.length})</div>`;
+    html += `<div class="card-grid">${follow.map(r=>card(r,sport)).join('')}</div>`;
+  }
+  if (hold.length) {
+    html += `<div class="sec-lbl">Aligned — Hold (${hold.length})</div>`;
+    html += `<div class="card-grid">${hold.map(r=>card(r,sport)).join('')}</div>`;
+  }
+  panel.innerHTML = html;
+
+  // Animate bars
+  requestAnimationFrame(() => {
+    panel.querySelectorAll('.bar-fill').forEach(el => {
+      const w = el.dataset.w;
+      if (w) setTimeout(() => el.style.width = w + '%', 80);
+    });
+  });
+}
+
+// ── summary ────────────────────────────────────────────
+function updateSummary() {
+  let total = 0, against = 0, follow = 0;
+  for (const d of Object.values(allData)) {
+    const r = d.results || [];
+    total   += r.length;
+    against += r.filter(x => x.signal === 'BET AGAINST').length;
+    follow  += r.filter(x => x.signal === 'FOLLOW MARKET').length;
+  }
+  document.getElementById('s-total').textContent   = total   || '—';
+  document.getElementById('s-against').textContent = against || '—';
+  document.getElementById('s-follow').textContent  = follow  || '—';
+  const now = new Date();
+  document.getElementById('s-time').textContent =
+    now.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+
+// ── fetch ──────────────────────────────────────────────
+async function loadSport(sport) {
+  const panel = document.getElementById(`panel-${sport}`);
+  panel.innerHTML = '<div class="loading"><div class="spin"></div>Fetching live data…</div>';
+  try {
+    const r = await fetch(`/api/analyze?sport=${sport}`);
+    const d = await r.json();
+    allData[sport] = d;
+    renderPanel(sport, d);
+    updateSummary();
+  } catch(e) {
+    panel.innerHTML = '<div class="empty">Error fetching data. Check server logs.</div>';
+  }
+}
+
+function refreshAll() {
+  ['worldcup','nba','ucl'].forEach(loadSport);
+}
+
+// ── tab switch ─────────────────────────────────────────
+function switchTab(sport, btn) {
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById(`panel-${sport}`).classList.add('on');
+}
+
+// ── share ──────────────────────────────────────────────
+function share(btn, encoded) {
+  const text = decodeURIComponent(encoded);
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '↗ Share this signal'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// ── init ───────────────────────────────────────────────
+loadSport('worldcup');
+loadSport('nba');
+loadSport('ucl');
+</script>
+</body>
+</html>
