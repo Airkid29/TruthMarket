@@ -1,0 +1,1196 @@
+{
+  "generated_at": "2026-04-21T16:26:39.068916Z",
+  "sports": {
+    "worldcup": {
+      "label": "FIFA World Cup 2026",
+      "icon": "soccer",
+      "total_markets": 48,
+      "analyzed": 27,
+      "summary": {
+        "bet_against": 4,
+        "follow_market": 0,
+        "hold": 23
+      },
+      "results": [
+        {
+          "team": "Spain",
+          "team_resolved": "Spain",
+          "market_prob": 16.1,
+          "model_prob": 3.4,
+          "divergence": 12.7,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 70,
+          "explanation": "Spain has only 1 title in history and ELO 2085 doesn't justify 16.1% odds. Market overprices by 12.7pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-spain-win-the-2026-fifa-world-cup-963-GGS_qu77mAwD.jpg",
+          "breakdown": {
+            "elo": 2085,
+            "titles": 1,
+            "finals": 1,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2085",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "France",
+          "team_resolved": "France",
+          "market_prob": 16.1,
+          "model_prob": 5.8,
+          "divergence": 10.3,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 66,
+          "explanation": "France ELO 2055 doesn't justify 16.1% odds. Market overprices by 10.3pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-france-win-the-2026-fifa-world-cup-924-HpDpNpZGzhE6.png",
+          "breakdown": {
+            "elo": 2055,
+            "titles": 2,
+            "finals": 3,
+            "recent": "F"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2055",
+            "Historical titles (30%)": "2 titles · 3 finals",
+            "Recent form (20%)": "F"
+          }
+        },
+        {
+          "team": "England",
+          "team_resolved": "England",
+          "market_prob": 11.1,
+          "model_prob": 3.4,
+          "divergence": 7.7,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 62,
+          "explanation": "England has only 1 title in history and ELO 2010 doesn't justify 11.1% odds. Market overprices by 7.7pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-england-win-the-2026-fifa-world-cup-937-_1d1dBqIjAJF.png",
+          "breakdown": {
+            "elo": 2010,
+            "titles": 1,
+            "finals": 1,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2010",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Portugal",
+          "team_resolved": "Portugal",
+          "market_prob": 7.8,
+          "model_prob": 2.4,
+          "divergence": 5.5,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 58,
+          "explanation": "Portugal has never won this tournament and ELO 2020 doesn't justify 7.8% odds. Market overprices by 5.5pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-portugal-win-the-2026-fifa-world-cup-912-hBSLTDz-fryP.jpg",
+          "breakdown": {
+            "elo": 2020,
+            "titles": 0,
+            "finals": 0,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2020",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Uruguay",
+          "team_resolved": "Uruguay",
+          "market_prob": 0.9,
+          "model_prob": 4.2,
+          "divergence": -3.2,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 55,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-uruguay-win-the-2026-fifa-world-cup-932-_dehTCk0jVI6.jpg",
+          "breakdown": {
+            "elo": 1890,
+            "titles": 2,
+            "finals": 3,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1890",
+            "Historical titles (30%)": "2 titles · 3 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Croatia",
+          "team_resolved": "Croatia",
+          "market_prob": 0.9,
+          "model_prob": 2.9,
+          "divergence": -2.1,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 53,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-croatia-win-the-2026-fifa-world-cup-h7JSLyZ5K641.jpg",
+          "breakdown": {
+            "elo": 1950,
+            "titles": 0,
+            "finals": 1,
+            "recent": "3rd"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1950",
+            "Historical titles (30%)": "0 titles · 1 finals",
+            "Recent form (20%)": "3rd"
+          }
+        },
+        {
+          "team": "Australia",
+          "team_resolved": "Australia",
+          "market_prob": 0.2,
+          "model_prob": 2.2,
+          "divergence": -2.0,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 53,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-australia-win-the-2026-fifa-world-cup-816-h07AmxNAmBOe.jpg",
+          "breakdown": {
+            "elo": 1810,
+            "titles": 0,
+            "finals": 0,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1810",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Germany",
+          "team_resolved": "Germany",
+          "market_prob": 5.3,
+          "model_prob": 7.3,
+          "divergence": -1.9,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 53,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-germany-win-the-2026-fifa-world-cup-467-bMMLcP0kbRWp.png",
+          "breakdown": {
+            "elo": 1990,
+            "titles": 4,
+            "finals": 8,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1990",
+            "Historical titles (30%)": "4 titles · 8 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "South Korea",
+          "team_resolved": "South Korea",
+          "market_prob": 0.3,
+          "model_prob": 2.0,
+          "divergence": -1.6,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-south-korea-win-the-2026-fifa-world-cup-485--jX-CFS0s6Gi.jpg",
+          "breakdown": {
+            "elo": 1840,
+            "titles": 0,
+            "finals": 0,
+            "recent": "R16"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1840",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "R16"
+          }
+        },
+        {
+          "team": "Ghana",
+          "team_resolved": "Ghana",
+          "market_prob": 0.2,
+          "model_prob": 1.7,
+          "divergence": -1.5,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-ghana-win-the-2026-fifa-world-cup-EY4rHJYUIT0s.jpg",
+          "breakdown": {
+            "elo": 1780,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1780",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Qatar",
+          "team_resolved": "Qatar",
+          "market_prob": 0.1,
+          "model_prob": 1.7,
+          "divergence": -1.5,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-qatar-win-the-2026-fifa-world-cup-lYLVDMNuB_rz.jpg",
+          "breakdown": {
+            "elo": 1720,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1720",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Iran",
+          "team_resolved": "Iran",
+          "market_prob": 0.2,
+          "model_prob": 1.7,
+          "divergence": -1.4,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-iran-win-the-2026-fifa-world-cup-788-9rtqjpUm7TXr.jpg",
+          "breakdown": {
+            "elo": 1770,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1770",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Tunisia",
+          "team_resolved": "Tunisia",
+          "market_prob": 0.2,
+          "model_prob": 1.7,
+          "divergence": -1.4,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-tunisia-win-the-2026-fifa-world-cup-165-x5mCDpdPmnHo.jpg",
+          "breakdown": {
+            "elo": 1750,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1750",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Saudi Arabia",
+          "team_resolved": "Saudi Arabia",
+          "market_prob": 0.2,
+          "model_prob": 1.7,
+          "divergence": -1.4,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-saudi-arabia-win-the-2026-fifa-world-cup-pmq7lZCrmxcU.jpg",
+          "breakdown": {
+            "elo": 1760,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1760",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Switzerland",
+          "team_resolved": "Switzerland",
+          "market_prob": 0.9,
+          "model_prob": 2.3,
+          "divergence": -1.3,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-switzerland-win-the-2026-fifa-world-cup-eCM9jYbpBu5K.jpg",
+          "breakdown": {
+            "elo": 1880,
+            "titles": 0,
+            "finals": 0,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1880",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Senegal",
+          "team_resolved": "Senegal",
+          "market_prob": 0.7,
+          "model_prob": 2.0,
+          "divergence": -1.3,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-senegal-win-the-2026-fifa-world-cup-_aVr7pz_5zsU.jpg",
+          "breakdown": {
+            "elo": 1830,
+            "titles": 0,
+            "finals": 0,
+            "recent": "R16"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1830",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "R16"
+          }
+        },
+        {
+          "team": "Canada",
+          "team_resolved": "Canada",
+          "market_prob": 0.6,
+          "model_prob": 1.7,
+          "divergence": -1.2,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-canada-win-the-2026-fifa-world-cup-755-AIJqQHcuzIgC.jpg",
+          "breakdown": {
+            "elo": 1790,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1790",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Ecuador",
+          "team_resolved": "Ecuador",
+          "market_prob": 0.7,
+          "model_prob": 1.7,
+          "divergence": -1.1,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-ecuador-win-the-2026-fifa-world-cup-986-uC9PrssrShwX.jpg",
+          "breakdown": {
+            "elo": 1800,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1800",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Argentina",
+          "team_resolved": "Argentina",
+          "market_prob": 8.8,
+          "model_prob": 7.9,
+          "divergence": 0.9,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-argentina-win-the-2026-fifa-world-cup-245-fNAFwGoMJCpr.png",
+          "breakdown": {
+            "elo": 2140,
+            "titles": 3,
+            "finals": 5,
+            "recent": "W"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2140",
+            "Historical titles (30%)": "3 titles · 5 finals",
+            "Recent form (20%)": "W"
+          }
+        },
+        {
+          "team": "Morocco",
+          "team_resolved": "Morocco",
+          "market_prob": 1.9,
+          "model_prob": 2.8,
+          "divergence": -0.9,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-morocco-win-the-2026-fifa-world-cup-464-QpTtZyzkg1UV.jpg",
+          "breakdown": {
+            "elo": 1900,
+            "titles": 0,
+            "finals": 0,
+            "recent": "SF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1900",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "SF"
+          }
+        },
+        {
+          "team": "USA",
+          "team_resolved": "USA",
+          "market_prob": 1.2,
+          "model_prob": 2.0,
+          "divergence": -0.8,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-usa-win-the-2026-fifa-world-cup-467-HSwwccrla5fz.jpg",
+          "breakdown": {
+            "elo": 1870,
+            "titles": 0,
+            "finals": 0,
+            "recent": "R16"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1870",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "R16"
+          }
+        },
+        {
+          "team": "Mexico",
+          "team_resolved": "Mexico",
+          "market_prob": 1.1,
+          "model_prob": 1.8,
+          "divergence": -0.7,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-mexico-win-the-2026-fifa-world-cup-529-CmZbz0GIAvB8.jpg",
+          "breakdown": {
+            "elo": 1850,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1850",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        },
+        {
+          "team": "Netherlands",
+          "team_resolved": "Netherlands",
+          "market_prob": 3.4,
+          "model_prob": 3.9,
+          "divergence": -0.5,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 50,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-netherlands-win-the-2026-fifa-world-cup-739-vMGKphh9oaFR.jpg",
+          "breakdown": {
+            "elo": 1985,
+            "titles": 0,
+            "finals": 3,
+            "recent": "SF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1985",
+            "Historical titles (30%)": "0 titles · 3 finals",
+            "Recent form (20%)": "SF"
+          }
+        },
+        {
+          "team": "Colombia",
+          "team_resolved": "Colombia",
+          "market_prob": 1.7,
+          "model_prob": 2.0,
+          "divergence": -0.4,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 50,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-colombia-win-the-2026-fifa-world-cup-734-f-5lazhIT4eT.jpg",
+          "breakdown": {
+            "elo": 1870,
+            "titles": 0,
+            "finals": 0,
+            "recent": "R16"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1870",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "R16"
+          }
+        },
+        {
+          "team": "Brazil",
+          "team_resolved": "Brazil",
+          "market_prob": 8.5,
+          "model_prob": 8.2,
+          "divergence": 0.3,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 50,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-brazil-win-the-2026-fifa-world-cup-183-mWG-xaHVZtUa.png",
+          "breakdown": {
+            "elo": 2060,
+            "titles": 5,
+            "finals": 7,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2060",
+            "Historical titles (30%)": "5 titles · 7 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Belgium",
+          "team_resolved": "Belgium",
+          "market_prob": 2.1,
+          "model_prob": 2.3,
+          "divergence": -0.2,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 50,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-belgium-win-the-2026-fifa-world-cup-358-I6h99tED1CtG.jpg",
+          "breakdown": {
+            "elo": 1960,
+            "titles": 0,
+            "finals": 0,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1960",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Japan",
+          "team_resolved": "Japan",
+          "market_prob": 2.1,
+          "model_prob": 2.0,
+          "divergence": 0.1,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 50,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/will-japan-win-the-2026-fifa-world-cup-112-8AQwfmoAsz2d.jpg",
+          "breakdown": {
+            "elo": 1890,
+            "titles": 0,
+            "finals": 0,
+            "recent": "R16"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1890",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "R16"
+          }
+        }
+      ]
+    },
+    "nba": {
+      "label": "NBA Champion 2026",
+      "icon": "basketball",
+      "total_markets": 16,
+      "analyzed": 16,
+      "summary": {
+        "bet_against": 2,
+        "follow_market": 1,
+        "hold": 13
+      },
+      "results": [
+        {
+          "team": "Oklahoma City Thunder",
+          "team_resolved": "Oklahoma City Thunder",
+          "market_prob": 48.5,
+          "model_prob": 5.0,
+          "divergence": 43.5,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 99,
+          "explanation": "Oklahoma City Thunder has only 1 title in history and ELO 1820 doesn't justify 48.5% odds. Market overprices by 43.5pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1820,
+            "titles": 1,
+            "finals": 3,
+            "recent": "W-Conference Finals"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1820",
+            "Historical titles (30%)": "1 titles · 3 finals",
+            "Recent form (20%)": "W-Conference Finals"
+          }
+        },
+        {
+          "team": "San Antonio Spurs",
+          "team_resolved": "San Antonio Spurs",
+          "market_prob": 16.1,
+          "model_prob": 3.4,
+          "divergence": 12.7,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 70,
+          "explanation": "San Antonio Spurs was eliminated early in their last campaign and ELO 1390 doesn't justify 16.1% odds. Market overprices by 12.7pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1390,
+            "titles": 5,
+            "finals": 6,
+            "recent": "Lottery"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1390",
+            "Historical titles (30%)": "5 titles · 6 finals",
+            "Recent form (20%)": "Lottery"
+          }
+        },
+        {
+          "team": "Los Angeles Lakers",
+          "team_resolved": "Los Angeles Lakers",
+          "market_prob": 1.8,
+          "model_prob": 8.8,
+          "divergence": -7.1,
+          "signal": "FOLLOW MARKET",
+          "signal_short": "follow",
+          "color": "green",
+          "confidence": 61,
+          "explanation": "Los Angeles Lakers: 17 historical titles signal structural dominance — ELO 1600 suggests higher probability than market implies. Market underprices by 7.1pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1600,
+            "titles": 17,
+            "finals": 17,
+            "recent": "Playoffs R1"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1600",
+            "Historical titles (30%)": "17 titles · 17 finals",
+            "Recent form (20%)": "Playoffs R1"
+          }
+        },
+        {
+          "team": "Denver Nuggets",
+          "team_resolved": "Denver Nuggets",
+          "market_prob": 6.5,
+          "model_prob": 2.8,
+          "divergence": 3.7,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 56,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1740,
+            "titles": 1,
+            "finals": 1,
+            "recent": "R1 exit"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1740",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "R1 exit"
+          }
+        },
+        {
+          "team": "Houston Rockets",
+          "team_resolved": "Houston Rockets",
+          "market_prob": 0.7,
+          "model_prob": 4.0,
+          "divergence": -3.3,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 55,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1620,
+            "titles": 2,
+            "finals": 2,
+            "recent": "Playoffs R2"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1620",
+            "Historical titles (30%)": "2 titles · 2 finals",
+            "Recent form (20%)": "Playoffs R2"
+          }
+        },
+        {
+          "team": "Minnesota Timberwolves",
+          "team_resolved": "Minnesota Timberwolves",
+          "market_prob": 1.5,
+          "model_prob": 4.3,
+          "divergence": -2.8,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 54,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1660,
+            "titles": 0,
+            "finals": 0,
+            "recent": "Conference Finals"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1660",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "Conference Finals"
+          }
+        },
+        {
+          "team": "Philadelphia 76ers",
+          "team_resolved": "Philadelphia 76ers",
+          "market_prob": 0.1,
+          "model_prob": 2.7,
+          "divergence": -2.6,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 54,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1510,
+            "titles": 3,
+            "finals": 3,
+            "recent": "Missed playoffs"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1510",
+            "Historical titles (30%)": "3 titles · 3 finals",
+            "Recent form (20%)": "Missed playoffs"
+          }
+        },
+        {
+          "team": "Orlando Magic",
+          "team_resolved": "Orlando Magic",
+          "market_prob": 0.5,
+          "model_prob": 2.9,
+          "divergence": -2.4,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 53,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1530,
+            "titles": 0,
+            "finals": 2,
+            "recent": "Playoffs R1"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1530",
+            "Historical titles (30%)": "0 titles · 2 finals",
+            "Recent form (20%)": "Playoffs R1"
+          }
+        },
+        {
+          "team": "Toronto Raptors",
+          "team_resolved": "Toronto Raptors",
+          "market_prob": 0.1,
+          "model_prob": 2.0,
+          "divergence": -1.9,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 53,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1510,
+            "titles": 1,
+            "finals": 1,
+            "recent": "Missed playoffs"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1510",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "Missed playoffs"
+          }
+        },
+        {
+          "team": "Phoenix Suns",
+          "team_resolved": "Phoenix Suns",
+          "market_prob": 0.1,
+          "model_prob": 1.9,
+          "divergence": -1.9,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 53,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1500,
+            "titles": 0,
+            "finals": 2,
+            "recent": "Missed playoffs"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1500",
+            "Historical titles (30%)": "0 titles · 2 finals",
+            "Recent form (20%)": "Missed playoffs"
+          }
+        },
+        {
+          "team": "Portland Trail Blazers",
+          "team_resolved": "Portland Trail Blazers",
+          "market_prob": 0.1,
+          "model_prob": 1.9,
+          "divergence": -1.8,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1420,
+            "titles": 1,
+            "finals": 1,
+            "recent": "Missed playoffs"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1420",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "Missed playoffs"
+          }
+        },
+        {
+          "team": "Atlanta Hawks",
+          "team_resolved": "Atlanta Hawks",
+          "market_prob": 0.4,
+          "model_prob": 2.1,
+          "divergence": -1.7,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1540,
+            "titles": 1,
+            "finals": 1,
+            "recent": "Missed playoffs"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1540",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "Missed playoffs"
+          }
+        },
+        {
+          "team": "New York Knicks",
+          "team_resolved": "New York Knicks",
+          "market_prob": 2.8,
+          "model_prob": 4.0,
+          "divergence": -1.3,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 52,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1680,
+            "titles": 2,
+            "finals": 2,
+            "recent": "Conference SF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1680",
+            "Historical titles (30%)": "2 titles · 2 finals",
+            "Recent form (20%)": "Conference SF"
+          }
+        },
+        {
+          "team": "Boston Celtics",
+          "team_resolved": "Boston Celtics",
+          "market_prob": 14.6,
+          "model_prob": 13.8,
+          "divergence": 0.8,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1780,
+            "titles": 18,
+            "finals": 22,
+            "recent": "Champions 2024"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1780",
+            "Historical titles (30%)": "18 titles · 22 finals",
+            "Recent form (20%)": "Champions 2024"
+          }
+        },
+        {
+          "team": "Detroit Pistons",
+          "team_resolved": "Detroit Pistons",
+          "market_prob": 3.0,
+          "model_prob": 3.8,
+          "divergence": -0.8,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1560,
+            "titles": 3,
+            "finals": 3,
+            "recent": "Playoffs R1"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1560",
+            "Historical titles (30%)": "3 titles · 3 finals",
+            "Recent form (20%)": "Playoffs R1"
+          }
+        },
+        {
+          "team": "Cleveland Cavaliers",
+          "team_resolved": "Cleveland Cavaliers",
+          "market_prob": 4.5,
+          "model_prob": 3.7,
+          "divergence": 0.7,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 51,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/nba-finals-points-leader-7g2ZEZvMXxLb.jpg",
+          "breakdown": {
+            "elo": 1700,
+            "titles": 1,
+            "finals": 1,
+            "recent": "Conference SF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1700",
+            "Historical titles (30%)": "1 titles · 1 finals",
+            "Recent form (20%)": "Conference SF"
+          }
+        }
+      ]
+    },
+    "ucl": {
+      "label": "UEFA Champions League 2025-26",
+      "icon": "trophy",
+      "total_markets": 5,
+      "analyzed": 5,
+      "summary": {
+        "bet_against": 4,
+        "follow_market": 0,
+        "hold": 1
+      },
+      "results": [
+        {
+          "team": "Bayern Munich",
+          "team_resolved": "Bayern Munich",
+          "market_prob": 35.5,
+          "model_prob": 7.5,
+          "divergence": 28.0,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 95,
+          "explanation": "Bayern Munich ELO 2020 doesn't justify 35.5% odds. Market overprices by 28.0pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/uefa-champions-league-2025-26-which-teams-qualify-StbSIjaEx2St.png",
+          "breakdown": {
+            "elo": 2020,
+            "titles": 6,
+            "finals": 11,
+            "recent": "SF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "2020",
+            "Historical titles (30%)": "6 titles · 11 finals",
+            "Recent form (20%)": "SF"
+          }
+        },
+        {
+          "team": "Arsenal",
+          "team_resolved": "Arsenal",
+          "market_prob": 26.5,
+          "model_prob": 3.6,
+          "divergence": 22.9,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 87,
+          "explanation": "Arsenal has never won this tournament and ELO 1980 doesn't justify 26.5% odds. Market overprices by 22.9pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/uefa-champions-league-2025-26-which-teams-qualify-StbSIjaEx2St.png",
+          "breakdown": {
+            "elo": 1980,
+            "titles": 0,
+            "finals": 1,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1980",
+            "Historical titles (30%)": "0 titles · 1 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "PSG",
+          "team_resolved": "PSG",
+          "market_prob": 24.5,
+          "model_prob": 3.6,
+          "divergence": 20.9,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 84,
+          "explanation": "PSG has never won this tournament and ELO 1950 doesn't justify 24.5% odds. Market overprices by 20.9pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/uefa-champions-league-2025-26-which-teams-qualify-StbSIjaEx2St.png",
+          "breakdown": {
+            "elo": 1950,
+            "titles": 0,
+            "finals": 1,
+            "recent": "QF"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1950",
+            "Historical titles (30%)": "0 titles · 1 finals",
+            "Recent form (20%)": "QF"
+          }
+        },
+        {
+          "team": "Atletico Madrid",
+          "team_resolved": "Atletico Madrid",
+          "market_prob": 11.6,
+          "model_prob": 3.4,
+          "divergence": 8.2,
+          "signal": "BET AGAINST",
+          "signal_short": "against",
+          "color": "red",
+          "confidence": 63,
+          "explanation": "Atletico Madrid has never won this tournament and ELO 1890 doesn't justify 11.6% odds. Market overprices by 8.2pp vs our model.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/uefa-champions-league-2025-26-which-teams-qualify-StbSIjaEx2St.png",
+          "breakdown": {
+            "elo": 1890,
+            "titles": 0,
+            "finals": 2,
+            "recent": "R16"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1890",
+            "Historical titles (30%)": "0 titles · 2 finals",
+            "Recent form (20%)": "R16"
+          }
+        },
+        {
+          "team": "Club Brugge",
+          "team_resolved": "Club Brugge",
+          "market_prob": 0.1,
+          "model_prob": 2.6,
+          "divergence": -2.5,
+          "signal": "HOLD",
+          "signal_short": "hold",
+          "color": "amber",
+          "confidence": 54,
+          "explanation": "Market probability aligns with our model estimate. No strong edge detected.",
+          "logo_url": "https://polymarket-upload.s3.us-east-2.amazonaws.com/uefa-champions-league-2025-26-which-teams-qualify-StbSIjaEx2St.png",
+          "breakdown": {
+            "elo": 1720,
+            "titles": 0,
+            "finals": 0,
+            "recent": "G"
+          },
+          "confidence_breakdown": {
+            "ELO rating (50%)": "1720",
+            "Historical titles (30%)": "0 titles · 0 finals",
+            "Recent form (20%)": "G"
+          }
+        }
+      ]
+    }
+  }
+}

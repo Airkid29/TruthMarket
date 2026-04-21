@@ -254,6 +254,34 @@ logging.basicConfig(level=logging.DEBUG)
 - **Machine Learning**: Neural networks for probability estimation
 - **Mobile App**: React Native companion application
 
+## New UX and Performance Updates
+
+- **Dark/Light Theme**: Theme toggle in the header with local persistence.
+- **Improved Sharing**: Signal-level sharing with native Web Share fallback to clipboard.
+- **Comparison Sharing**: Select 2-4 teams across cards and share a consolidated comparison text.
+- **Faster World Cup Load**:
+  - Removed per-market artificial delay in fetch parsing.
+  - Added API analysis response cache in `app.py` for repeated requests.
+  - Staggered non-primary sport loads on frontend to prioritize first paint.
+
+## CDC (Cahier des Charges)
+
+An updated CDC is available here:
+
+- `docs/CDC.md`
+
+## Architecture Diagram Generation
+
+Generate the architecture diagram (Mermaid format) with:
+
+```bash
+python scripts/generate_architecture_diagram.py
+```
+
+Output file:
+
+- `docs/architecture.mmd`
+
 ## License
 
 This project is for educational and research purposes. Please respect Polymarket's terms of service and applicable gambling regulations in your jurisdiction.

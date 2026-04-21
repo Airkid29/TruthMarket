@@ -10,7 +10,7 @@ import logging
 import time
 from typing import List, Dict, Any, Optional
 from config import (
-    POLYMARKET_BASE_URL, REQUEST_TIMEOUT, RATE_LIMIT_DELAY,
+    POLYMARKET_BASE_URL, REQUEST_TIMEOUT,
     SPORT_SLUGS, CACHE_ENABLED, CACHE_TTL
 )
 
@@ -171,9 +171,6 @@ def fetch_sport_markets(sport: str) -> List[Dict[str, Any]]:
             "question": question,
             "logo_url": logo_url,
         })
-
-        # Rate limiting
-        time.sleep(RATE_LIMIT_DELAY)
 
     results.sort(key=lambda x: -x["market_prob"])
     logger.info(f"Found {len(results)} markets for {sport}")
